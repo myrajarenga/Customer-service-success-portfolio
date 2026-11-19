@@ -112,7 +112,7 @@
     h1 {
       max-width: 700px;
       margin-bottom: .85rem;
-      font-size: clamp(2.8rem, 5.4vw, 4.7rem);
+      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
       line-height: .99;
     }
     h1 em { color: var(--green); font-weight: 400; }
@@ -331,7 +331,8 @@
 
     @media (max-width: 800px) {
       .hero, .video-grid { grid-template-columns: 1fr; }
-      .hero { padding-block: 3rem; }
+      .hero { padding-block: 2rem; }
+      h1 { font-size: clamp(1.9rem, 4.5vw, 2.25rem); }
       main section[id] { scroll-margin-top: 112px; }
       .account-card { max-width: 560px; }
       .services, .results { grid-template-columns: repeat(2, 1fr); }
@@ -346,7 +347,7 @@
       nav { gap: .35rem 1rem; }
       nav a { font-size: .82rem; }
       .hero { padding-block: 2.5rem 3rem; gap: 1.5rem; }
-      h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+      h1 { font-size: clamp(1.9rem, 8.5vw, 2.8rem); }
       main section[id] { scroll-margin-top: 132px; }
       .account-card { padding: 1.4rem; }
       .services, .results, .samples, .contact { grid-template-columns: 1fr; }
