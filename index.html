@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="Myra Jarenga is a Customer Success Specialist in Nairobi, helping customers get results and stay successful.">
+  <title>Myra Jarenga | Customer Success Specialist</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d2b28;
+      --muted: #64716b;
+      --paper: #f6f4ee;
+      --surface: #fffefa;
+      --green: #245b49;
+      --green-dark: #193f34;
+      --lime: #d7ed9f;
+      --line: #e4e6dc;
+      --orange: #e9a56d;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 var(--sans);
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 5;
+      padding: .7rem 1rem;
+      background: var(--surface);
+    }
+    .skip-link:focus { top: 1rem; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      min-height: 82px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .monogram {
+      display: block;
+      overflow: hidden;
+      width: 44px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--green);
+      flex: 0 0 auto;
+    }
+    .monogram img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+    nav a {
+      color: var(--muted);
+      font-size: .9rem;
+      text-decoration: none;
+    }
+    nav a:hover, .text-link:hover { color: var(--green); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 4rem);
+      padding-block: clamp(2.5rem, 6vh, 4.5rem);
+    }
+    main section[id] { scroll-margin-top: 104px; }
+    .eyebrow {
+      margin: 0 0 .85rem;
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .quote {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+    h1 {
+      max-width: 700px;
+      margin-bottom: .85rem;
+      font-size: clamp(2.8rem, 5.4vw, 4.7rem);
+      line-height: .99;
+    }
+    h1 em { color: var(--green); font-weight: 400; }
+    .intro { max-width: 590px; color: var(--muted); font-size: 1rem; }
+    .location { margin-bottom: 1rem; color: var(--muted); font-size: .9rem; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: .7rem 1.15rem;
+      border: 1px solid var(--green);
+      border-radius: 3px;
+      background: var(--green);
+      color: white;
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .text-link { font-size: .9rem; font-weight: 700; text-underline-offset: 4px; }
+    .account-card {
+      position: relative;
+      padding: 2rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 22px 65px rgb(34 54 44 / 8%);
+    }
+    .account-card::before {
+      position: absolute;
+      z-index: -1;
+      top: -18px;
+      right: -18px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--lime);
+      content: "";
+    }
+    .card-label {
+      margin-bottom: 1.2rem;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .account-heading { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+    .account-heading h2 { margin: 0; font: 700 1.25rem var(--sans); letter-spacing: -.02em; }
+    .status {
+      padding: .25rem .7rem;
+      border-radius: 100px;
+      background: #fff0dd;
+      color: #88511d;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+    .timeline { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+    .timeline li {
+      position: relative;
+      padding: 0 0 1.2rem 1.65rem;
+      border-left: 1px solid #c9d4c8;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .timeline li::before {
+      position: absolute;
+      top: .38rem;
+      left: -.29rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      content: "";
+    }
+    .timeline strong { color: var(--ink); }
+    .section { padding-block: clamp(4rem, 8vw, 7rem); }
+    .section-dark { background: var(--green-dark); color: white; }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.06;
+    }
+    .section-heading > p { max-width: 480px; margin-bottom: .2rem; color: var(--muted); }
+    .section-dark .eyebrow { color: var(--lime); }
+    .section-dark .section-heading > p { color: #c4d2c8; }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+    .video-frame {
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgb(255 255 255 / 18%);
+      border-radius: 5px;
+      background: #102a23;
+    }
+    .video-frame video { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .video-copy h2 { margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .video-copy p { color: #c4d2c8; }
+    .video-copy a { color: var(--lime); text-underline-offset: 4px; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .service {
+      min-height: 220px;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--surface);
+    }
+    .service-number { color: #83958a; font-size: .8rem; font-weight: 700; }
+    .service h3 { margin: 1.2rem 0 .55rem; font-size: 1.15rem; }
+    .service p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .results {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 3rem;
+      background: rgb(255 255 255 / 20%);
+    }
+    .result { min-height: 160px; padding: 1.5rem; background: var(--green-dark); }
+    .result strong {
+      display: block;
+      margin-bottom: .4rem;
+      color: var(--lime);
+      font: 400 clamp(2.3rem, 4vw, 3.5rem)/1 var(--serif);
+    }
+    .result span { color: #d2ded6; font-size: .88rem; }
+    .experience-note { max-width: 750px; margin: 2.5rem 0 0; color: #d2ded6; }
+    .samples {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+    .sample {
+      grid-column: span 2;
+      padding: 1.6rem;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--surface);
+    }
+    .sample:nth-child(4), .sample:nth-child(5) { grid-column: span 3; }
+    .sample-tag {
+      margin-bottom: .7rem;
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .sample h3 { margin-bottom: .6rem; font: 400 1.55rem/1.2 var(--serif); }
+    .sample > p { color: var(--muted); font-size: .9rem; }
+    .sample ul, .sample ol { margin: 1rem 0 0; padding-left: 1.2rem; }
+    .sample li { margin: .55rem 0; color: var(--muted); font-size: .88rem; }
+    .sample blockquote {
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      border-left: 2px solid var(--lime);
+      color: #485950;
+      font: 1rem/1.6 var(--serif);
+    }
+    .sample dl { margin: 1rem 0 0; }
+    .sample dl div { display: grid; grid-template-columns: 105px 1fr; gap: .6rem; margin-top: .55rem; font-size: .85rem; }
+    .sample dt { font-weight: 700; }
+    .sample dd { margin: 0; color: var(--muted); }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: 2rem;
+    }
+    .tool {
+      padding: .5rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: var(--surface);
+      color: #42564b;
+      font-size: .86rem;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: clamp(2rem, 6vw, 4.5rem);
+      border-radius: 8px;
+      background: var(--lime);
+    }
+    .contact h2 { max-width: 500px; }
+    .contact-details { display: grid; gap: .7rem; justify-self: end; }
+    .contact-details a { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.5rem;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .video-grid { grid-template-columns: 1fr; }
+      .hero { padding-block: 3rem; }
+      main section[id] { scroll-margin-top: 112px; }
+      .account-card { max-width: 560px; }
+      .services, .results { grid-template-columns: repeat(2, 1fr); }
+      .section-heading { grid-template-columns: 1fr; gap: 1rem; }
+      .samples { grid-template-columns: repeat(2, 1fr); }
+      .sample, .sample:nth-child(4), .sample:nth-child(5) { grid-column: span 1; }
+      .sample:last-child { grid-column: span 2; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 32px, 1120px); }
+      .topbar { align-items: flex-start; flex-direction: column; padding-block: .7rem; gap: .45rem; }
+      nav { gap: .35rem 1rem; }
+      nav a { font-size: .82rem; }
+      .hero { padding-block: 2.5rem 3rem; gap: 1.5rem; }
+      h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+      main section[id] { scroll-margin-top: 132px; }
+      .account-card { padding: 1.4rem; }
+      .services, .results, .samples, .contact { grid-template-columns: 1fr; }
+      .sample, .sample:nth-child(4), .sample:nth-child(5), .sample:last-child { grid-column: auto; }
+      .contact-details { justify-self: start; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Myra Jarenga, home">
+      <span class="monogram" aria-hidden="true"><img src="assets/myra-profile.jpg" alt=""></span>
+      <span>Myra Jarenga</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#how">How I help</a>
+      <a href="#results">Results</a>
+      <a href="#samples">Samples</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" id="top">
+      <div>
+        <p class="eyebrow">Customer Success Specialist</p>
+        <h1>I help customers get results, <em>and keep them.</em></h1>
+        <p class="intro">From the first onboarding call to the talk that saves an account. I listen first, explain the next step in plain words, and follow through on every promise.</p>
+        <p class="location">Nairobi, Kenya · UTC+3</p>
+        <div class="actions">
+          <a class="button" href="#samples">See my sample work</a>
+          <a class="text-link" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="account-card" aria-label="Sample account progress">
+        <p class="card-label">Sample account · Northstar Coaching</p>
+        <div class="account-heading">
+          <h2>Turning risk into progress</h2>
+          <span class="status">At risk → Good</span>
+        </div>
+        <ol class="timeline">
+          <li><strong>Monday</strong> · A payment failed twice. Sent a friendly note with a one-click fix.</li>
+          <li><strong>Tuesday</strong> · Customer shared that reps struggled with the booking page. Booked a 20-minute fix call.</li>
+          <li><strong>Wednesday</strong> · Call done. Reps now book 6 calls a day; account health moved to Good.</li>
+          <li><strong>Next Friday</strong> · Check call volume, then discuss whether a second booking page would help.</li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="section section-dark" id="video">
+      <div class="wrap video-grid">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/myra-profile.jpg">
+            <source src="assets/myra-intro.mp4" type="video/mp4">
+            Your browser does not support HTML video. Open the video file from the assets folder.
+          </video>
+        </div>
+        <div class="video-copy">
+          <p class="eyebrow">Meet me first</p>
+          <h2>A short introduction.</h2>
+          <p>Hear how I approach customer conversations, support, and follow-through.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="how">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">How I help</p>
+          <h2>Four things I own.</h2>
+        </div>
+        <p>I make the next step clear, solve problems with the customer, and look for the right outcome—not a one-size-fits-all script.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <span class="service-number">01</span>
+          <h3>Onboarding</h3>
+          <p>I run setup calls so a new customer sees value in the first week, not the first quarter.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">02</span>
+          <h3>Retention</h3>
+          <p>I reach out to at-risk and cancelled accounts, find out what went wrong, and work toward a fair fix.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">03</span>
+          <h3>Payments</h3>
+          <p>I follow up on failed and overdue payments early, kindly, and before an account is interrupted.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">04</span>
+          <h3>Growth</h3>
+          <p>I match customers to the plan and add-ons that fit how they work, without pressure.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="results">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Real results</p>
+            <h2>What I have already moved.</h2>
+          </div>
+          <p>Results built through steady customer relationships, thoughtful outreach, and supportive team leadership.</p>
+        </div>
+        <div class="results">
+          <div class="result"><strong>90%+</strong><span>Customer satisfaction maintained as a Customer Service Representative at Eat’n’Go</span></div>
+          <div class="result"><strong>20%</strong><span>Higher customer retention through relationships built at Eat’n’Go</span></div>
+          <div class="result"><strong>15%</strong><span>Client base growth in 3 months through outreach to 50 prospects</span></div>
+          <div class="result"><strong>15%</strong><span>Sales targets beaten by the customer service team I led, even during COVID-19</span></div>
+        </div>
+        <p class="experience-note">I now run my own client business, work remotely with a London team, and build and secure software products. I learn new tools fast and explain them without jargon.</p>
+      </div>
+    </section>
+
+    <section class="wrap section" id="samples">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Sample work</p>
+          <h2>How I handle the hard parts.</h2>
+        </div>
+        <p>These are samples I wrote to show my method. All customers, names, and messages are made up.</p>
+      </div>
+      <div class="samples">
+        <article class="sample">
+          <p class="sample-tag">Sample 1 · Onboarding</p>
+          <h3>The 30-minute setup call</h3>
+          <p>A clear agenda so the customer leaves with a working setup and a next step.</p>
+          <ul>
+            <li>Agree what a good month looks like <strong>· 5 min</strong></li>
+            <li>Set up the booking page together <strong>· 15 min</strong></li>
+            <li>Make a test booking, live <strong>· 5 min</strong></li>
+            <li>Agree the next step and follow-up date <strong>· 5 min</strong></li>
+          </ul>
+        </article>
+        <article class="sample">
+          <p class="sample-tag">Sample 2 · Retention</p>
+          <h3>The save message</h3>
+          <p>For a customer who just cancelled. I ask, I listen, and I offer a real fix.</p>
+          <blockquote>“Hi Sam, I saw you cancelled, and thank you for trying us. Can I ask what was not working? If it was the booking page, I can fix it with you in 15 minutes. If it was price, let’s look at a plan that fits how you actually sell.”</blockquote>
+        </article>
+        <article class="sample">
+          <p class="sample-tag">Sample 3 · Payments</p>
+          <h3>The failed-payment follow-up</h3>
+          <p>Three gentle touches. Each makes it easy to fix, and none of them pressure.</p>
+          <ol>
+            <li><strong>Day 0:</strong> Friendly note with a one-click fix.</li>
+            <li><strong>Day 3:</strong> Offer to check the invoice together.</li>
+            <li><strong>Day 7:</strong> Short call to explain what pauses and how to keep everything running.</li>
+          </ol>
+        </article>
+        <article class="sample">
+          <p class="sample-tag">Sample 4 · Account notes</p>
+          <h3>Notes the next person can use</h3>
+          <p>Five lines, every time. Anyone on the team can pick up the account in one minute.</p>
+          <dl>
+            <div><dt>Who</dt><dd>Sam, owner, Northstar Coaching</dd></div>
+            <div><dt>What happened</dt><dd>Cancelled after two failed payments</dd></div>
+            <div><dt>What they said</dt><dd>Reps find the booking page confusing</dd></div>
+            <div><dt>Next step</dt><dd>Fix call, then check call volume</dd></div>
+            <div><dt>Owner and date</dt><dd>Myra, Friday</dd></div>
+          </dl>
+        </article>
+        <article class="sample">
+          <p class="sample-tag">Sample 5 · Expansion</p>
+          <h3>Ask first, suggest second</h3>
+          <p>I only bring up an add-on when the customer’s own numbers show a need.</p>
+          <ol>
+            <li>Ask: “How many calls does your team book each week?”</li>
+            <li>Ask: “Do different reps sell different offers?”</li>
+            <li>Suggest a second booking page only if it fits their setup.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="tools-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Tools I use</p>
+          <h2 id="tools-heading">Comfortable with the everyday stack.</h2>
+        </div>
+      </div>
+      <div class="tools" aria-label="Tools">
+        <span class="tool">Microsoft 365</span>
+        <span class="tool">Excel tracking</span>
+        <span class="tool">Google Docs &amp; Sheets</span>
+        <span class="tool">WordPress</span>
+        <span class="tool">Perplexity AI</span>
+        <span class="tool">Microsoft Azure</span>
+        <span class="tool">GoHighLevel · currently training</span>
+      </div>
+    </section>
+
+    <section class="wrap section" id="contact">
+      <div class="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk about your customers.</h2>
+        </div>
+        <div class="contact-details">
+          <a href="mailto:myrajarenga1234@gmail.com">myrajarenga1234@gmail.com</a>
+          <a href="tel:+254712697989">+254 712 697 989</a>
+          <a href="https://linkedin.com/in/myra-jarenga">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>Myra Jarenga · Customer Success Specialist</span>
+    <span>Nairobi, Kenya</span>
+  </footer>
+</body>
+</html>
